@@ -1,13 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import './App.css';
 
 function App() {
+  const Title = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: palevioletred;
+  `;
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <Title>
           Image App will be here.
-        </p>
+        </Title>
       </header>
     </div>
   );
