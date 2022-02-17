@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import './App.css';
+import Box from '../atoms/Box';
 
-function App() {
+function Index() {
   const Title = styled.h1`
     font-size: 1.5em;
     text-align: center;
@@ -10,14 +10,17 @@ function App() {
   `;
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
         <Title>
           Image App will be here.
         </Title>
+        <Box>
+          <p>Hello</p>
+        </Box>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Index;
