@@ -1,18 +1,15 @@
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 
-export default function Box({ children }: BoxProps) {
+export default function Box({ children, styles }: BoxProps) {
     const Box = styled.div`
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        border-radius: 5px;
     `;
 
-    return (<Box>
+    return (<Box style={styles}>
         {children}
     </Box>);
 }
 
 interface BoxProps {
     children?: any;
-    isClear?: boolean;
-    styles?: string;
+    styles?: CSSProperties;
 }

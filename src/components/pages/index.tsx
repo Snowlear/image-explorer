@@ -1,24 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import Box from '../atoms/Box';
+import Body from '../atoms/Body';
+import Wrapper from '../atoms/Wrapper';
+import Header from '../molecules/Header';
+import ApprovedWidget from '../organisms/ApprovedWidget';
+import ImageViewer from '../organisms/ImageViewer';
 
 function Index() {
-  const Title = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: palevioletred;
-  `;
-
+  
   return (
     <div>
-      <header>
-        <Title>
-          Image App will be here.
-        </Title>
-        <Box>
-          <p>Hello</p>
-        </Box>
-      </header>
+        <Body>
+          <Header/>
+          <Wrapper>
+            <ApprovedWidget/>
+            <ImageViewer/><ImageViewer/>
+          </Wrapper>
+        </Body>
     </div>
   );
 }
