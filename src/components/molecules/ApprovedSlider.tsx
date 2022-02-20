@@ -5,18 +5,15 @@ import ImageCard from "./ImageCard";
 export default function ApprovedSlider({ styles }: ApprovedSliderProps) {
     const StyledApprovedSlider = styled.div`
     white-space: nowrap;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
     margin-bottom: 10px;
     `;
-
+    
     const scrollRef = useHorizontalScroll();
 
     return (<StyledApprovedSlider ref={scrollRef} style={styles}>
-        <ImageCard></ImageCard>
-        <ImageCard></ImageCard>
-        <ImageCard></ImageCard>
-        <ImageCard></ImageCard>
+        <ImageCard isPlus={true}></ImageCard>
         <ImageCard></ImageCard>
         <ImageCard></ImageCard>
         <ImageCard></ImageCard>

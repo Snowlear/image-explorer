@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Body from '../atoms/Body';
 import Wrapper from '../atoms/Wrapper';
 import Header from '../molecules/Header';
@@ -14,7 +13,7 @@ function Index() {
           <Header/>
           <Wrapper>
             <ApprovedWidget/>
-            <ImageViewer/><ImageViewer/>
+            <ImageViewer/>
           </Wrapper>
         </Body>
     </div>
