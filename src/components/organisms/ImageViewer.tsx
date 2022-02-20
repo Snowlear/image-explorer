@@ -1,25 +1,27 @@
 import styled, { CSSProperties } from "styled-components";
-import Button from "../atoms/Button";
 import ImageBox from "../atoms/ImageBox";
+import Plus from '../../assets/images/plus.png';
 
-export default function ImageViewer({ styles }: ImageViewerProps) {
-    const StyledImageViewer = styled.div`
-    background-color:green;
+export default function ImageViewer({ isInitial }: ImageViewerProps) {
+    const StyledImageViewer = styled.div<ImageViewerProps>`
+    text-align: center;
     margin: auto;
     margin-bottom:20px;
     margin-top: 20px;
     width:80%;
+    height:400px;
+    ${props => props.isInitial && `
+    width:40%;
+    `}
     `;
 
     return (
-        <StyledImageViewer>
-            <ImageBox ></ImageBox>
-            <Button>Approve</Button>
-            <Button>Decline</Button>
+        <StyledImageViewer isInitial={isInitial}>
+            <ImageBox url={Plus} ></ImageBox>
         </StyledImageViewer>
     );
 }
 
 interface ImageViewerProps {
-    styles?: CSSProperties;
+    isInitial?: boolean;
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Body from '../atoms/Body';
-import Box from '../atoms/Box';
 
 function Header() {
     const StyledHeaderText = styled.p`

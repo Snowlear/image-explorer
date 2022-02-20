@@ -1,7 +1,11 @@
-import { CSSProperties } from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 
 export default function ImageBox({ url, styles, placeholderText }: ImageBoxProps) {
-    return (<img src={url} alt={placeholderText} style={styles}/>);
+    const Image = styled.img`
+    width:100%;
+    `;
+
+    return (<Image src={url} alt={placeholderText} style={styles}/>);
 }
 
 interface ImageBoxProps {
