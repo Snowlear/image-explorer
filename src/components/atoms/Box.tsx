@@ -1,9 +1,7 @@
 import styled, { CSSProperties } from "styled-components";
 
 export default function Box({ children, styles }: BoxProps) {
-  const Box = styled.div``;
-
-  return <Box style={styles}>{children}</Box>;
+  return <div style={styles}>{children}</div>;
 }
 
 interface BoxProps {
