@@ -1,31 +1,31 @@
 import { createApi } from "unsplash-js";
 
 export function getRandomImage() {
-    const api = createApi({
-        accessKey: "KHEDA9TtUeTvMfV9B4iif58GYziMBuzIodBGlWqGd0k"
-      });
+  const api = createApi({
+    accessKey: "KHEDA9TtUeTvMfV9B4iif58GYziMBuzIodBGlWqGd0k",
+  });
 
-      const response:unsplashResponse = {
-          isError: false,
-          result: {}
-      };
+  const response: unsplashResponse = {
+    isError: false,
+    result: {},
+  };
 
-
-      api.photos.getRandom({})
-      .then(result => {
-        console.log(result);
-        response.result = result;
-        return response;
-      })
-      .catch(() => {
-        response.isError = true;
-        return response;
-      });
+  api.photos
+    .getRandom({})
+    .then((result) => {
+      console.log(result);
+      response.result = result;
+      return response;
+    })
+    .catch(() => {
+      response.isError = true;
+      return response;
+    });
 }
 
-interface unsplashResponse{
-    isError: boolean;
-    result: object;
+interface unsplashResponse {
+  isError: boolean;
+  result: object;
 }
 
 /*
