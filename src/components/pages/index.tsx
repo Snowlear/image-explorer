@@ -12,10 +12,10 @@ import ImageViewer from "../organisms/ImageViewer";
 import { ReactComponent as Plus } from "../../assets/images/plus.svg";
 
 const StyledTextArea = styled(TextArea)`
-text-align: center;
-border-top: 1px solid #e5e5e5;
-padding-top:10px;
-padding-bottom:10px;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 
 const StyledPlus = styled(Plus)`
@@ -39,11 +39,12 @@ export default function Index() {
           {sessionData && sessionData.sessionState !== "initial" ? (
             <ButtonOverlay />
           ) : (
-            <StyledTextArea>Click on the <StyledPlus/> in order to get image recommendations.</StyledTextArea>
+            <StyledTextArea>
+              Click on the <StyledPlus /> in order to get image recommendations.
+            </StyledTextArea>
           )}
         </Wrapper>
       </Body>
     </div>
   );
 }
-
