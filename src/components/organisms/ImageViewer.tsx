@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ImageBox from "../atoms/ImageBox";
-import Plus from "../../assets/images/plus.png";
+import Plus from "../../assets/images/plus2.png";
 
 const StyledImageViewer = styled.div<ImageViewerProps>`
   text-align: center;
@@ -12,6 +12,10 @@ const StyledImageViewer = styled.div<ImageViewerProps>`
   ${(props) =>
     props.isInitial &&
     `
+    padding:20px;
+    background-color: #ece9f9;
+    border: 1px solid #d9d6ff;
+    height:40%;
     width:40%;
     `}
 `;

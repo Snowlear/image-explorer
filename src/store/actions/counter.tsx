@@ -1,13 +1,11 @@
-import { SAYAC_ARTTIR, SAYAC_AZALT } from "../types";
-
 export const arttir = () => {
   return {
-    type: SAYAC_ARTTIR,
+    type: "typeburaya",
   };
 };
 
 export const azalt = () => {
   return {
-    type: SAYAC_AZALT,
+    type: "SAYAC_AZALT",
   };
 };

@@ -1,11 +1,10 @@
 import { createStore, combineReducers } from "redux";
-import reducer from "./reducers/counter";
-import CounterReducer from "./reducers/counter";
+import SessionReducer from "./reducers/session";
 
 const reducers = combineReducers({
-  counter: CounterReducer,
+  session: SessionReducer,
 });
 
-const store = createStore(reducer);
+const store = createStore(reducers);
 
 export default store;
