@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
 import styled from "styled-components";
 import { SessionState } from "../../store/types";
@@ -35,7 +35,7 @@ export default function Index() {
         <Header />
         <Wrapper>
           <ApprovedWidget />
-          <ImageViewer isInitial={true} />
+          <ImageViewer isInitial={sessionData.sessionState === "initial"} />
           {sessionData && sessionData.sessionState !== "initial" ? (
             <ButtonOverlay />
           ) : (

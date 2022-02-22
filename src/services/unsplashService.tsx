@@ -5,7 +5,7 @@ export async function getRandomImage() {
     accessKey: "KHEDA9TtUeTvMfV9B4iif58GYziMBuzIodBGlWqGd0k",
   });
 
-  const response: unsplashResponse = {
+  const response: UnsplashResponse = {
     isError: false,
     result: {},
   };
@@ -21,7 +21,7 @@ export async function getRandomImage() {
   return response;
 }
 
-interface unsplashResponse {
+export interface UnsplashResponse {
   isError: boolean;
   result: object;
 }
