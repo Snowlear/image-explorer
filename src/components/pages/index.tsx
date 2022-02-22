@@ -40,7 +40,10 @@ export default function Index() {
             <ButtonOverlay />
           ) : (
             <StyledTextArea>
-              <p>Click on the <StyledPlus /> in order to get image recommendations.</p>
+              <p>
+                Click on the <StyledPlus /> in order to get image
+                recommendations.
+              </p>
             </StyledTextArea>
           )}
         </Wrapper>

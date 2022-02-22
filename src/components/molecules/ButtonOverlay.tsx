@@ -7,29 +7,25 @@ import Cancel from "../../assets/images/cancel.png";
 import { getRandomImage } from "../../services/unsplashService";
 
 const StyledButtonOverlay = styled.div`
-border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
   display: flex;
   justify-content: center;
 `;
 
 const StyledImageBox = styled(ImageBox)`
-width: 30px;
- display: flex;
-  justifyContent: center;
+  width: 30px;
+  display: flex;
+  justifycontent: center;
 `;
 
 function ButtonOverlay() {
   return (
     <StyledButtonOverlay>
       <ColouredStyledButton type={"positive"} onClick={() => alert("yis")}>
-        <StyledImageBox
-          url={Tick}
-        ></StyledImageBox>
+        <StyledImageBox url={Tick}></StyledImageBox>
       </ColouredStyledButton>
       <ColouredStyledButton type={"negative"} onClick={() => alert("no")}>
-        <StyledImageBox
-          url={Cancel}
-        ></StyledImageBox>
+        <StyledImageBox url={Cancel}></StyledImageBox>
       </ColouredStyledButton>
     </StyledButtonOverlay>
   );

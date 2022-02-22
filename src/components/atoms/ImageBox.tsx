@@ -16,7 +16,15 @@ export default function ImageBox({
   className,
   isInitial,
 }: ImageBoxProps) {
-  return <StyledImage isInitial={isInitial} className={className} src={url} alt={placeholderText} style={styles} />;
+  return (
+    <StyledImage
+      isInitial={isInitial}
+      className={className}
+      src={url}
+      alt={placeholderText}
+      style={styles}
+    />
+  );
 }
 
 interface ImageBoxProps {

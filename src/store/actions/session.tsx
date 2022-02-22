@@ -7,7 +7,7 @@ export const setSessionInitial = () => {
 export const setSessionReview = (imageData: any) => {
   return {
     type: "SESSION_REVIEW",
-    imageData: imageData
+    imageData: imageData,
   };
 };
 

@@ -4,7 +4,10 @@ import { useHorizontalScroll } from "../../helpers/horizontalScrollSupport";
 import ImageCard from "./ImageCard";
 import { useDispatch } from "react-redux";
 import { setSessionReview } from "../../store/actions/session";
-import { getRandomImage, UnsplashResponse } from "../../services/unsplashService";
+import {
+  getRandomImage,
+  UnsplashResponse,
+} from "../../services/unsplashService";
 
 const StyledApprovedSlider = styled.div`
   white-space: nowrap;
@@ -20,9 +23,11 @@ export default function ApprovedSlider({ styles }: ApprovedSliderProps) {
   console.log(state);
   const dispatch = useDispatch();
   const setReview = async () => {
-    const randomImage:UnsplashResponse = await getRandomImage();
-    if(randomImage.isError){
-      alert("Error occured when image was retrieveing. Please try again later.");
+    const randomImage: UnsplashResponse = await getRandomImage();
+    if (randomImage.isError) {
+      alert(
+        "Error occured when image was retrieveing. Please try again later."
+      );
     } else {
       dispatch(setSessionReview(randomImage.result));
     }
