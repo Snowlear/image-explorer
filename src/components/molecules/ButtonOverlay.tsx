@@ -11,20 +11,24 @@ const StyledButtonOverlay = styled.div`
   justify-content: center;
 `;
 
+const StyledImageBox = styled(ImageBox)`
+width: 30px;
+ display: flex;
+  justifyContent: center;
+`;
+
 function ButtonOverlay() {
   return (
     <StyledButtonOverlay>
       <ColouredStyledButton type={"positive"} onClick={() => alert("")}>
-        <ImageBox
-          styles={{ width: "30px", display: "flex", justifyContent: "center" }}
+        <StyledImageBox
           url={Tick}
-        ></ImageBox>
+        ></StyledImageBox>
       </ColouredStyledButton>
       <ColouredStyledButton type={"negative"} onClick={() => getRandomImage()}>
-        <ImageBox
-          styles={{ width: "30px", display: "flex", justifyContent: "center" }}
+        <StyledImageBox
           url={Cancel}
-        ></ImageBox>
+        ></StyledImageBox>
       </ColouredStyledButton>
     </StyledButtonOverlay>
   );

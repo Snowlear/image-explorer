@@ -1,3 +1,4 @@
+import { getRandomImage } from "../../services/unsplashService";
 import {
   SessionState,
   SESSION_INITIAL,
@@ -7,16 +8,24 @@ import {
 
 const default_state: SessionState = {
   sessionState: "initial",
+  currentReviewPhoto: undefined,
 };
 
 const reducer = (state: SessionState = default_state, action: any) => {
+  console.log(action);
   switch (action.type) {
     case SESSION_INITIAL:
-      return (state.sessionState = "initial");
+      state.sessionState = "initial"
+      return (state);
     case SESSION_REVIEW:
-      return (state.sessionState = "photoReview");
+      let data = getRandomImage();
+      state.currentReviewPhoto = data;
+      state.sessionState = "photoReview"
+      console.log(state);
+      return (state);
     case SESSION_VIEW:
-      return (state.sessionState = "photoView");
+      state.sessionState = "photoView"
+      return (state);
     default:
       return state;
   }

@@ -4,4 +4,5 @@ export const SESSION_VIEW = "SESSION_VIEW";
 
 export interface SessionState {
   sessionState: "initial" | "photoReview" | "photoView";
+  currentReviewPhoto?: any;
 }

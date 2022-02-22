@@ -1,6 +1,6 @@
 import { createApi } from "unsplash-js";
 
-export function getRandomImage() {
+export async function getRandomImage() {
   const api = createApi({
     accessKey: "KHEDA9TtUeTvMfV9B4iif58GYziMBuzIodBGlWqGd0k",
   });
@@ -10,17 +10,15 @@ export function getRandomImage() {
     result: {},
   };
 
-  api.photos
+  await api.photos
     .getRandom({})
     .then((result) => {
-      console.log(result);
       response.result = result;
-      return response;
     })
     .catch(() => {
       response.isError = true;
-      return response;
     });
+  return response;
 }
 
 interface unsplashResponse {

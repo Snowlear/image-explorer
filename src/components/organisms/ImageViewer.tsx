@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ImageBox from "../atoms/ImageBox";
-import Plus from "../../assets/images/plus2.png";
+import Arrow from "../../assets/images/arrow.png";
 
 const StyledImageViewer = styled.div<ImageViewerProps>`
   text-align: center;
@@ -23,7 +23,7 @@ const StyledImageViewer = styled.div<ImageViewerProps>`
 export default function ImageViewer({ isInitial }: ImageViewerProps) {
   return (
     <StyledImageViewer isInitial={isInitial}>
-      <ImageBox url={Plus}></ImageBox>
+      <ImageBox url={Arrow}></ImageBox>
     </StyledImageViewer>
   );
 }

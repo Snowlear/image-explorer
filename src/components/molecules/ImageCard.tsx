@@ -15,6 +15,7 @@ const StyledImageCard = styled.div<ImageCardProps>`
   font-size: 16px;
   display: inline-block;
   text-align: center;
+  cursor: pointer;
   ${(props) => props.isPlus && "float: left;"}
 `;
 
@@ -46,9 +47,9 @@ const StyledPlus = styled(Plus)`
   transform: translate(-50%, -50%);
 `;
 
-function ImageCard({ isPlus = false }: ImageCardProps) {
+function ImageCard({ isPlus = false, onClick }: ImageCardProps) {
   return (
-    <StyledImageCard isPlus={isPlus}>
+    <StyledImageCard onClick={() => onClick && onClick()} isPlus={isPlus}>
       {isPlus ? (
         <React.Fragment>
           <StyledPlus />
@@ -69,4 +70,5 @@ export default ImageCard;
 
 interface ImageCardProps {
   isPlus?: boolean;
+  onClick?: Function;
 }

@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import styled, { CSSProperties } from "styled-components";
 import { useHorizontalScroll } from "../../helpers/horizontalScrollSupport";
 import ImageCard from "./ImageCard";
+import { useDispatch } from "react-redux";
+import { setSessionReview } from "../../store/actions/session";
 
 const StyledApprovedSlider = styled.div`
   white-space: nowrap;
@@ -13,9 +15,10 @@ const StyledApprovedSlider = styled.div`
 export default function ApprovedSlider({ styles }: ApprovedSliderProps) {
   const scrollRef = useHorizontalScroll();
   const state = useSelector((state) => state);
+  const dispatch = useDispatch();
   return (
     <StyledApprovedSlider ref={scrollRef} style={styles}>
-      <ImageCard isPlus={true}></ImageCard>
+      <ImageCard onClick={() => dispatch(setSessionReview())} isPlus={true}></ImageCard>
       <ImageCard></ImageCard>
     </StyledApprovedSlider>
   );
