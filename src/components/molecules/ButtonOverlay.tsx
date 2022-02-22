@@ -7,6 +7,7 @@ import Cancel from "../../assets/images/cancel.png";
 import { getRandomImage } from "../../services/unsplashService";
 
 const StyledButtonOverlay = styled.div`
+border-top: 1px solid #e5e5e5;
   display: flex;
   justify-content: center;
 `;
@@ -20,12 +21,12 @@ width: 30px;
 function ButtonOverlay() {
   return (
     <StyledButtonOverlay>
-      <ColouredStyledButton type={"positive"} onClick={() => alert("")}>
+      <ColouredStyledButton type={"positive"} onClick={() => alert("yis")}>
         <StyledImageBox
           url={Tick}
         ></StyledImageBox>
       </ColouredStyledButton>
-      <ColouredStyledButton type={"negative"} onClick={() => getRandomImage()}>
+      <ColouredStyledButton type={"negative"} onClick={() => alert("no")}>
         <StyledImageBox
           url={Cancel}
         ></StyledImageBox>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
 import styled from "styled-components";
 import { SessionState } from "../../store/types";
@@ -40,7 +40,7 @@ export default function Index() {
             <ButtonOverlay />
           ) : (
             <StyledTextArea>
-              Click on the <StyledPlus /> in order to get image recommendations.
+              <p>Click on the <StyledPlus /> in order to get image recommendations.</p>
             </StyledTextArea>
           )}
         </Wrapper>

@@ -8,7 +8,7 @@ const StyledImageViewer = styled.div<ImageViewerProps>`
   margin-bottom: 20px;
   margin-top: 20px;
   width: 80%;
-  height: 400px;
+  height: 500px;
   ${(props) =>
     props.isInitial &&
     `
@@ -23,7 +23,7 @@ const StyledImageViewer = styled.div<ImageViewerProps>`
 export default function ImageViewer({ isInitial }: ImageViewerProps) {
   return (
     <StyledImageViewer isInitial={isInitial}>
-      <ImageBox url={Arrow}></ImageBox>
+      <ImageBox isInitial={isInitial} url={Arrow}></ImageBox>
     </StyledImageViewer>
   );
 }
