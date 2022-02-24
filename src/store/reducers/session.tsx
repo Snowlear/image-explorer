@@ -7,7 +7,7 @@ import {
   SESSION_REVIEW,
 } from "../types";
 
-const default_state: SessionState = {
+const default_state: SessionState = localStorage.getItem('sessionData') ? JSON.parse(localStorage.getItem('sessionData') || "") : {
   sessionState: "initial",
   currentReviewPhoto: undefined,
   reviewHistory: [],
@@ -16,6 +16,7 @@ const default_state: SessionState = {
 };
 
 const reducer = (state: SessionState = default_state, action: any) => {
+  localStorage.setItem('sessionData', JSON.stringify(state));
   switch (action.type) {
     case SESSION_INITIAL:
       state.sessionState = "initial";
