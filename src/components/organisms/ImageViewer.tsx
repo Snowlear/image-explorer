@@ -24,7 +24,6 @@ const StyledImageViewer = styled.div<ImageViewerProps>`
 `;
 
 export default function ImageViewer() {
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const sessionData: SessionState = useSelector(
     (state: RootStateOrAny) => state.session
@@ -32,6 +31,7 @@ export default function ImageViewer() {
   return (
     <StyledImageViewer isInitial={sessionData.sessionState === "initial"}>
       <ImageBox onLoad={() => {
+      console.log("hihi");
         dispatch(setLoading(false));
         }} isInitial={sessionData.sessionState === "initial"} url={sessionData.sessionState === "initial" ? Arrow : sessionData.currentReviewPhoto.regular}></ImageBox>
     </StyledImageViewer>

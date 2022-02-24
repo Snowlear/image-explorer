@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ColouredStyledButton } from "../atoms/Button";
 import ImageBox from "../atoms/ImageBox";
@@ -22,22 +22,24 @@ const StyledImageBox = styled(ImageBox)`
 `;
 
 function ButtonOverlay() {
-  const state = useSelector((state) => state);
+  const state = useSelector((state: RootStateOrAny) => state);
   const dispatch = useDispatch();
-  const sessionData: SessionState = useSelector(
-    (state: RootStateOrAny) => state.session
-  );
+  const [isInProcess, setIsInProcess] = useState(false);
   return (
     <StyledButtonOverlay>
-      <ColouredStyledButton type={"positive"} onClick={() => {
+      <ColouredStyledButton isDisabled={isInProcess} type={"positive"} onClick={async () => {
+        setIsInProcess(true);
         dispatch(setApprovedImage(state));
-        setReviewSession(dispatch,sessionData);
+        await setReviewSession(dispatch,state.session);
+        setIsInProcess(false);
       }
         }>
         <StyledImageBox url={Tick}></StyledImageBox>
       </ColouredStyledButton>
-      <ColouredStyledButton type={"negative"} onClick={() => {
-        setReviewSession(dispatch,sessionData)
+      <ColouredStyledButton isDisabled={isInProcess} type={"negative"} onClick={async () => {
+        setIsInProcess(true);
+        await setReviewSession(dispatch,state.session);
+        setIsInProcess(false);
         }}>
         <StyledImageBox url={Cancel}></StyledImageBox>
       </ColouredStyledButton>

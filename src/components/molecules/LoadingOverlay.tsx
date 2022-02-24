@@ -1,10 +1,4 @@
-import { RootStateOrAny, useSelector } from "react-redux";
 import styled, { CSSProperties } from "styled-components";
-import { useHorizontalScroll } from "../../helpers/horizontalScrollSupport";
-import ImageCard from "./ImageCard";
-import { useDispatch } from "react-redux";
-import { setReviewSession } from "../../helpers/dataHandle";
-import { SessionState } from "../../store/types";
 import ImageBox from "../atoms/ImageBox";
 import LoadingGif from "../../assets/images/loading-buffering.gif"
 

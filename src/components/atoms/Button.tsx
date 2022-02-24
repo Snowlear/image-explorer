@@ -7,9 +7,9 @@ const StyledButton = styled.button`
   align-items: center;
 `;
 
-export default function Button({ children, onClick, className }: ButtonProps) {
+export default function Button({ children, onClick, className, isDisabled }: ButtonProps) {
   return (
-    <StyledButton onClick={() => onClick()} className={className}>
+    <StyledButton disabled={isDisabled} onClick={() => onClick()} className={className}>
       {children}
     </StyledButton>
   );
@@ -25,6 +25,10 @@ export const ColouredStyledButton = styled(Button)<StyledButtonProps>`
   border-radius: 30px;
   font-size: 20px;
   width: 150px;
+  :disabled{
+    background-color:grey
+    border: 1px solid grey;
+  }
   ${(props) =>
     props.type === "positive" &&
     `
@@ -41,4 +45,5 @@ interface ButtonProps {
   children?: any;
   onClick: Function;
   className?: string;
+  isDisabled?: boolean;
 }

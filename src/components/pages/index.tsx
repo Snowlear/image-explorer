@@ -29,7 +29,6 @@ export default function Index() {
   const sessionData: SessionState = useSelector(
     (state: RootStateOrAny) => state.session
   );
-  console.log(sessionData);
   return (
     <div>
       <Body>

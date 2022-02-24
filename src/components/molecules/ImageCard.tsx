@@ -15,8 +15,9 @@ const StyledImageCard = styled.div<ImageCardProps>`
   font-size: 16px;
   display: inline-block;
   text-align: center;
-  cursor: pointer;
-  ${(props) => props.isPlus && "float: left;"}
+  
+  ${(props) => props.isPlus && `float: left;
+  cursor: pointer;`}
 `;
 
 const StyledImageApproveOverlay = styled.div`

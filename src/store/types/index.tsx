@@ -5,7 +5,7 @@ export const APPROVE_IMAGE = "APPROVE_IMAGE";
 export const IS_LOADING = "IS_LOADING";
 
 export interface SessionState {
-  sessionState: "initial" | "photoReview" | "photoView";
+  sessionState: "initial" | "photoReview";
   currentReviewPhoto?: any;
   reviewHistory: Array<ImageDataBundle>;
   approvedImages: Array<ImageDataBundle>;

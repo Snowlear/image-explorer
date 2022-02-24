@@ -15,12 +15,10 @@ const StyledApprovedSlider = styled.div`
 
 export default function ApprovedSlider({ styles }: ApprovedSliderProps) {
   const scrollRef = useHorizontalScroll();
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const sessionData: SessionState = useSelector(
     (state: RootStateOrAny) => state.session
   );
-    console.log(sessionData);
   return (
     <StyledApprovedSlider ref={scrollRef} style={styles}>
       <ImageCard onClick={() => setReviewSession(dispatch,sessionData)} isPlus={true}></ImageCard>

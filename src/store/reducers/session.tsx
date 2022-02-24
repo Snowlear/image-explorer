@@ -5,7 +5,6 @@ import {
   SessionState,
   SESSION_INITIAL,
   SESSION_REVIEW,
-  SESSION_VIEW,
 } from "../types";
 
 const default_state: SessionState = {
@@ -17,6 +16,7 @@ const default_state: SessionState = {
 };
 
 const reducer = (state: SessionState = default_state, action: any) => {
+  
   switch (action.type) {
     case SESSION_INITIAL:
       state.sessionState = "initial";
@@ -33,10 +33,6 @@ const reducer = (state: SessionState = default_state, action: any) => {
         currentReviewPhoto: imageData,
         reviewHistory: [...state.reviewHistory,imageData]
       };
-      console.log(state);
-      return state;
-    case SESSION_VIEW:
-      state.sessionState = "photoView";
       return state;
     case APPROVE_IMAGE:
       state = {
@@ -52,7 +48,6 @@ const reducer = (state: SessionState = default_state, action: any) => {
       }
       return state;
     default:
-      console.log("denial");
       return state;
   }
 };
