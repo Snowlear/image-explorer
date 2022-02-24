@@ -1,5 +1,7 @@
 import {
+  APPROVE_IMAGE,
   ImageDataBundle,
+  IS_LOADING,
   SessionState,
   SESSION_INITIAL,
   SESSION_REVIEW,
@@ -9,33 +11,48 @@ import {
 const default_state: SessionState = {
   sessionState: "initial",
   currentReviewPhoto: undefined,
-  //reviewHistory: [],
-  //approvedImages: [],
+  reviewHistory: [],
+  approvedImages: [],
+  isLoading: false,
 };
 
 const reducer = (state: SessionState = default_state, action: any) => {
-  //console.log(action);
   switch (action.type) {
     case SESSION_INITIAL:
       state.sessionState = "initial";
       return state;
     case SESSION_REVIEW:
       let imageData: ImageDataBundle = {
-        id: action.imageData.response.id,
-        regular: action.imageData.response.urls.regular,
-        thumb: action.imageData.response.urls.thumb,
+        id: action.imageData.id,
+        regular: action.imageData.regular,
+        thumb: action.imageData.thumb,
       };
       state = {
         ...state,
         sessionState: "photoReview",
-        currentReviewPhoto: { ...state.currentReviewPhoto, imageData },
+        currentReviewPhoto: imageData,
+        reviewHistory: [...state.reviewHistory,imageData]
       };
       console.log(state);
       return state;
     case SESSION_VIEW:
       state.sessionState = "photoView";
       return state;
+    case APPROVE_IMAGE:
+      state = {
+        ...state,
+        sessionState: "photoReview",
+        approvedImages: [...state.approvedImages, state.currentReviewPhoto]
+      };
+      return state;
+    case IS_LOADING:
+      state = {
+        ...state,
+        isLoading: action.isLoading
+      }
+      return state;
     default:
+      console.log("denial");
       return state;
   }
 };

@@ -1,13 +1,10 @@
-import { useSelector } from "react-redux";
+import { RootStateOrAny, useSelector } from "react-redux";
 import styled, { CSSProperties } from "styled-components";
 import { useHorizontalScroll } from "../../helpers/horizontalScrollSupport";
 import ImageCard from "./ImageCard";
 import { useDispatch } from "react-redux";
-import { setSessionReview } from "../../store/actions/session";
-import {
-  getRandomImage,
-  UnsplashResponse,
-} from "../../services/unsplashService";
+import { setReviewSession } from "../../helpers/dataHandle";
+import { SessionState } from "../../store/types";
 
 const StyledApprovedSlider = styled.div`
   white-space: nowrap;
@@ -19,24 +16,15 @@ const StyledApprovedSlider = styled.div`
 export default function ApprovedSlider({ styles }: ApprovedSliderProps) {
   const scrollRef = useHorizontalScroll();
   const state = useSelector((state) => state);
-  console.log("slider");
-  console.log(state);
   const dispatch = useDispatch();
-  const setReview = async () => {
-    const randomImage: UnsplashResponse = await getRandomImage();
-    if (randomImage.isError) {
-      alert(
-        "Error occured when image was retrieveing. Please try again later."
-      );
-    } else {
-      dispatch(setSessionReview(randomImage.result));
-    }
-  };
-
+  const sessionData: SessionState = useSelector(
+    (state: RootStateOrAny) => state.session
+  );
+    console.log(sessionData);
   return (
     <StyledApprovedSlider ref={scrollRef} style={styles}>
-      <ImageCard onClick={() => setReview()} isPlus={true}></ImageCard>
-      <ImageCard></ImageCard>
+      <ImageCard onClick={() => setReviewSession(dispatch,sessionData)} isPlus={true}></ImageCard>
+      {sessionData.approvedImages.map((imageData,idx)=>{return <ImageCard key={"image_"+idx} imgUrl={imageData.thumb}></ImageCard>})}
     </StyledApprovedSlider>
   );
 }

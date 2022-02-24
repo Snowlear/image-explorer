@@ -10,6 +10,7 @@ import Header from "../molecules/Header";
 import ApprovedWidget from "../organisms/ApprovedWidget";
 import ImageViewer from "../organisms/ImageViewer";
 import { ReactComponent as Plus } from "../../assets/images/plus.svg";
+import LoadingOverlay from "../molecules/LoadingOverlay";
 
 const StyledTextArea = styled(TextArea)`
   text-align: center;
@@ -35,19 +36,18 @@ export default function Index() {
         <Header />
         <Wrapper>
           <ApprovedWidget />
-          <ImageViewer isInitial={sessionData.sessionState === "initial"} />
+          <ImageViewer/>
           {sessionData && sessionData.sessionState !== "initial" ? (
             <ButtonOverlay />
           ) : (
             <StyledTextArea>
-              <p>
                 Click on the <StyledPlus /> in order to get image
                 recommendations.
-              </p>
             </StyledTextArea>
           )}
         </Wrapper>
       </Body>
+      <LoadingOverlay isLoading={sessionData.isLoading}/>
     </div>
   );
 }

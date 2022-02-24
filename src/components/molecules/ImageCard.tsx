@@ -47,7 +47,7 @@ const StyledPlus = styled(Plus)`
   transform: translate(-50%, -50%);
 `;
 
-function ImageCard({ isPlus = false, onClick }: ImageCardProps) {
+function ImageCard({ isPlus = false, onClick, imgUrl }: ImageCardProps) {
   return (
     <StyledImageCard onClick={() => onClick && onClick()} isPlus={isPlus}>
       {isPlus ? (
@@ -56,7 +56,7 @@ function ImageCard({ isPlus = false, onClick }: ImageCardProps) {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <ImageBox></ImageBox>
+          <ImageBox url={imgUrl}></ImageBox>
           <StyledImageApproveOverlay>
             <StyledTick />
           </StyledImageApproveOverlay>
@@ -71,4 +71,5 @@ export default ImageCard;
 interface ImageCardProps {
   isPlus?: boolean;
   onClick?: Function;
+  imgUrl?: string;
 }

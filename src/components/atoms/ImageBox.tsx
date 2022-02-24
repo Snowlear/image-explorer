@@ -1,12 +1,9 @@
 import styled, { CSSProperties } from "styled-components";
 
-const StyledImage = styled.img<ImageBoxProps>`
+const StyledImage = styled.img`
   height: 100%;
-  width: auto;
-  ${(props) =>
-    props.isInitial &&
-    `
-    width: 100%`}
+    width: 100%;
+    object-fit: contain;
 `;
 
 export default function ImageBox({
@@ -15,10 +12,11 @@ export default function ImageBox({
   placeholderText,
   className,
   isInitial,
+  onLoad,
 }: ImageBoxProps) {
   return (
     <StyledImage
-      isInitial={isInitial}
+      onLoad={() =>onLoad && onLoad()}
       className={className}
       src={url}
       alt={placeholderText}
@@ -33,4 +31,5 @@ interface ImageBoxProps {
   placeholderText?: string;
   url?: any;
   styles?: CSSProperties;
+  onLoad?: Function;
 }

@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import ImageBox from "../atoms/ImageBox";
 import Arrow from "../../assets/images/arrow.png";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { SessionState } from "../../store/types";
+import { setLoading } from "../../store/actions/session";
 
 const StyledImageViewer = styled.div<ImageViewerProps>`
   text-align: center;
@@ -20,10 +23,17 @@ const StyledImageViewer = styled.div<ImageViewerProps>`
     `}
 `;
 
-export default function ImageViewer({ isInitial }: ImageViewerProps) {
+export default function ImageViewer() {
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const sessionData: SessionState = useSelector(
+    (state: RootStateOrAny) => state.session
+  );
   return (
-    <StyledImageViewer isInitial={isInitial}>
-      <ImageBox isInitial={isInitial} url={Arrow}></ImageBox>
+    <StyledImageViewer isInitial={sessionData.sessionState === "initial"}>
+      <ImageBox onLoad={() => {
+        dispatch(setLoading(false));
+        }} isInitial={sessionData.sessionState === "initial"} url={sessionData.sessionState === "initial" ? Arrow : sessionData.currentReviewPhoto.regular}></ImageBox>
     </StyledImageViewer>
   );
 }

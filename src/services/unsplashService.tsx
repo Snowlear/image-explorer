@@ -23,7 +23,7 @@ export async function getRandomImage() {
 
 export interface UnsplashResponse {
   isError: boolean;
-  result: object;
+  result: any;
 }
 
 /*
