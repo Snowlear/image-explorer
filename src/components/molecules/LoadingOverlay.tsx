@@ -6,7 +6,7 @@ const StyledLoadingOverlay = styled.div<ApprovedSliderProps>`
   position: absolute;
   top: 0px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #00000082;
   color: white;
   ${(props) => (props.isLoading ? "display: flex;" : "display: none;")}
