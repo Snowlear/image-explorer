@@ -11,8 +11,8 @@ export default function ApprovedWidget({ styles }: ApprovedWidgetProps) {
     (state: RootStateOrAny) => state.session
   );
   return (
-    <StyledApprovedWidget style={styles}>
-      <p>Approved Images ({sessionData.approvedImages.length})</p>
+    <StyledApprovedWidget data-testid="approved-images-div" style={styles}>
+      <p data-testid="approved-images-text">Approved Images ({sessionData.approvedImages.length})</p>
       <ApprovedSlider />
     </StyledApprovedWidget>
   );
