@@ -9,6 +9,7 @@ export const setReviewSession = async (
 ) => {
   dispatch(setLoading(true));
   await getRandomImage().then((randomImage) => {
+    console.log(randomImage);
     if (!randomImage.isError) {
       let imageData = {
         id: randomImage.result.response.id,

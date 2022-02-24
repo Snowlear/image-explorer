@@ -29,7 +29,7 @@ export default function ImageViewer() {
     (state: RootStateOrAny) => state.session
   );
   return (
-    <StyledImageViewer isInitial={sessionData.sessionState === "initial"}>
+    <StyledImageViewer data-testid="image-viewer" isInitial={sessionData.sessionState === "initial"}>
       <ImageBox
         onLoad={() => {
           dispatch(setLoading(false));

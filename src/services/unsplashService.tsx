@@ -2,8 +2,7 @@ import { createApi } from "unsplash-js";
 
 export async function getRandomImage() {
   const api = createApi({
-    accessKey: "EOVXVDGJCFsuapb6iq6ydzUjhmbDrGjIKpBtRzC2c6I",
-    //accessKey: "KHEDA9TtUeTvMfV9B4iif58GYziMBuzIodBGlWqGd0k",
+    accessKey: process.env.REACT_APP_API_KEY || "API KEY HERE"
   });
 
   const response: UnsplashResponse = {
