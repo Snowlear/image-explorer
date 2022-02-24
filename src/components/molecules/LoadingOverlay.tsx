@@ -3,10 +3,11 @@ import ImageBox from "../atoms/ImageBox";
 import LoadingGif from "../../assets/images/loading-buffering.gif";
 
 const StyledLoadingOverlay = styled.div<ApprovedSliderProps>`
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  height: 100%;
+position: fixed;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
   background-color: #00000082;
   color: white;
   ${(props) => (props.isLoading ? "display: flex;" : "display: none;")}

@@ -8,6 +8,7 @@ const StyledImageCard = styled.div<ImageCardProps>`
   position: relative;
   height: 100px;
   width: 150px;
+  overflow: hidden;
   border-radius: 5px;
   background-color: #ece9f9;
   border: 1px solid #d9d6ff;
