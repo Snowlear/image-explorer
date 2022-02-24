@@ -7,9 +7,18 @@ const StyledButton = styled.button`
   align-items: center;
 `;
 
-export default function Button({ children, onClick, className, isDisabled }: ButtonProps) {
+export default function Button({
+  children,
+  onClick,
+  className,
+  isDisabled,
+}: ButtonProps) {
   return (
-    <StyledButton disabled={isDisabled} onClick={() => onClick()} className={className}>
+    <StyledButton
+      disabled={isDisabled}
+      onClick={() => onClick()}
+      className={className}
+    >
       {children}
     </StyledButton>
   );

@@ -35,18 +35,17 @@ export default function Index() {
         <Header />
         <Wrapper>
           <ApprovedWidget />
-          <ImageViewer/>
+          <ImageViewer />
           {sessionData && sessionData.sessionState !== "initial" ? (
             <ButtonOverlay />
           ) : (
             <StyledTextArea>
-                Click on the <StyledPlus /> in order to get image
-                recommendations.
+              Click on the <StyledPlus /> in order to get image recommendations.
             </StyledTextArea>
           )}
         </Wrapper>
       </Body>
-      <LoadingOverlay isLoading={sessionData.isLoading}/>
+      <LoadingOverlay isLoading={sessionData.isLoading} />
     </div>
   );
 }

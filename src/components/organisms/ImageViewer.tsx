@@ -30,10 +30,17 @@ export default function ImageViewer() {
   );
   return (
     <StyledImageViewer isInitial={sessionData.sessionState === "initial"}>
-      <ImageBox onLoad={() => {
-      console.log("hihi");
-        dispatch(setLoading(false));
-        }} isInitial={sessionData.sessionState === "initial"} url={sessionData.sessionState === "initial" ? Arrow : sessionData.currentReviewPhoto.regular}></ImageBox>
+      <ImageBox
+        onLoad={() => {
+          dispatch(setLoading(false));
+        }}
+        isInitial={sessionData.sessionState === "initial"}
+        url={
+          sessionData.sessionState === "initial"
+            ? Arrow
+            : sessionData.currentReviewPhoto.regular
+        }
+      ></ImageBox>
     </StyledImageViewer>
   );
 }

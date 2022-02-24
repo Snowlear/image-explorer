@@ -2,8 +2,8 @@ import styled, { CSSProperties } from "styled-components";
 
 const StyledImage = styled.img`
   height: 100%;
-    width: 100%;
-    object-fit: contain;
+  width: 100%;
+  object-fit: contain;
 `;
 
 export default function ImageBox({
@@ -16,7 +16,7 @@ export default function ImageBox({
 }: ImageBoxProps) {
   return (
     <StyledImage
-      onLoad={() =>onLoad && onLoad()}
+      onLoad={() => onLoad && onLoad()}
       className={className}
       src={url}
       alt={placeholderText}

@@ -4,7 +4,7 @@ export const setSessionInitial = () => {
   };
 };
 
-export const setSessionReview = (imageData: any,sessionData:any) => {
+export const setSessionReview = (imageData: any, sessionData: any) => {
   return {
     type: "SESSION_REVIEW",
     imageData: imageData,
@@ -12,20 +12,14 @@ export const setSessionReview = (imageData: any,sessionData:any) => {
   };
 };
 
-export const setSessionView = () => {
-  return {
-    type: "SESSION_VIEW",
-  };
-};
-
-export const setApprovedImage = (sessionData:any) => {
+export const setApprovedImage = (sessionData: any) => {
   return {
     type: "APPROVE_IMAGE",
     sessionData: sessionData,
   };
 };
 
-export const setLoading = (isLoading:boolean) => {
+export const setLoading = (isLoading: boolean) => {
   return {
     type: "IS_LOADING",
     isLoading: isLoading,

@@ -16,7 +16,6 @@ const default_state: SessionState = {
 };
 
 const reducer = (state: SessionState = default_state, action: any) => {
-  
   switch (action.type) {
     case SESSION_INITIAL:
       state.sessionState = "initial";
@@ -31,21 +30,21 @@ const reducer = (state: SessionState = default_state, action: any) => {
         ...state,
         sessionState: "photoReview",
         currentReviewPhoto: imageData,
-        reviewHistory: [...state.reviewHistory,imageData]
+        reviewHistory: [...state.reviewHistory, imageData],
       };
       return state;
     case APPROVE_IMAGE:
       state = {
         ...state,
         sessionState: "photoReview",
-        approvedImages: [...state.approvedImages, state.currentReviewPhoto]
+        approvedImages: [...state.approvedImages, state.currentReviewPhoto],
       };
       return state;
     case IS_LOADING:
       state = {
         ...state,
-        isLoading: action.isLoading
-      }
+        isLoading: action.isLoading,
+      };
       return state;
     default:
       return state;

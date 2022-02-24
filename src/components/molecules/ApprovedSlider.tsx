@@ -21,8 +21,15 @@ export default function ApprovedSlider({ styles }: ApprovedSliderProps) {
   );
   return (
     <StyledApprovedSlider ref={scrollRef} style={styles}>
-      <ImageCard onClick={() => setReviewSession(dispatch,sessionData)} isPlus={true}></ImageCard>
-      {sessionData.approvedImages.map((imageData,idx)=>{return <ImageCard key={"image_"+idx} imgUrl={imageData.thumb}></ImageCard>})}
+      <ImageCard
+        onClick={() => setReviewSession(dispatch, sessionData)}
+        isPlus={true}
+      ></ImageCard>
+      {sessionData.approvedImages.map((imageData, idx) => {
+        return (
+          <ImageCard key={"image_" + idx} imgUrl={imageData.thumb}></ImageCard>
+        );
+      })}
     </StyledApprovedSlider>
   );
 }
