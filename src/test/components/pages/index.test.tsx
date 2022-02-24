@@ -1,9 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import Index from "../../../components/pages";
+import store from "../../../store";
 
 test("renders image text", () => {
-  render(<Index />);
+  render(<Provider store={store}><Index /></Provider>);
   const linkElement = screen.getByText(/Image Explorer/i);
-  console.log(linkElement);
-  expect(screen.getByRole('div')).toBeInTheDocument();
+  expect(linkElement).toBeInTheDocument();
 });
