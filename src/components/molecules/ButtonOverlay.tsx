@@ -24,28 +24,21 @@ const StyledImageBox = styled(ImageBox)`
 function ButtonOverlay() {
   const state = useSelector((state: RootStateOrAny) => state);
   const dispatch = useDispatch();
-  const [isInProcess, setIsInProcess] = useState(false);
   return (
     <StyledButtonOverlay>
       <ColouredStyledButton
-        isDisabled={isInProcess}
         type={"positive"}
         onClick={async () => {
-          setIsInProcess(true);
           dispatch(setApprovedImage(state));
           await setReviewSession(dispatch, state.session);
-          setIsInProcess(false);
         }}
       >
         <StyledImageBox url={Tick}></StyledImageBox>
       </ColouredStyledButton>
       <ColouredStyledButton
-        isDisabled={isInProcess}
         type={"negative"}
         onClick={async () => {
-          setIsInProcess(true);
           await setReviewSession(dispatch, state.session);
-          setIsInProcess(false);
         }}
       >
         <StyledImageBox url={Cancel}></StyledImageBox>
