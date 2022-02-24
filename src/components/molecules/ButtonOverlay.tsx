@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ColouredStyledButton } from "../atoms/Button";
 import ImageBox from "../atoms/ImageBox";
@@ -6,7 +6,6 @@ import Tick from "../../assets/images/tick.png";
 import Cancel from "../../assets/images/cancel.png";
 import { setApprovedImage } from "../../store/actions/session";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-import { SessionState } from "../../store/types";
 import { setReviewSession } from "../../helpers/dataHandle";
 
 const StyledButtonOverlay = styled.div`

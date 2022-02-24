@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { getRandomImage, UnsplashResponse } from "../services/unsplashService";
+import { getRandomImage } from "../services/unsplashService";
 import { setLoading, setSessionReview } from "../store/actions/session";
 import { SessionState } from "../store/types";
 
